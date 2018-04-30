@@ -34,6 +34,32 @@ make install
 ```
 Alternatively, if the target project is also managed by CMake, the `ExternalProject_Add` command is also useful.
 
+## Example
+
+Here is an example code for calculating a perceptual distance of two sRGB colors. First, include necessary headers:
+```
+#include <color-util/RGB_to_XYZ.hpp>
+#include <color-util/XYZ_to_Lab.hpp>
+#include <color-util/CIEDE2000.hpp>
+```
+Define the target colors in sRGB:
+```
+colorutil::RGB rgb_color_1(200.0 / 255.0, 100.0 / 255.0, 20.0 / 200.0);
+colorutil::RGB rgb_color_2(100.0 / 255.0, 200.0 / 255.0, 50.0 / 200.0);
+```
+CIEDE2000 requires CIELAB colors as input, so convert them to CIELAB via CIEXYZ:
+```
+colorutil::XYZ xyz_color_1 = colorutil::convert_RGB_to_XYZ(rgb_color_1);
+colorutil::XYZ xyz_color_2 = colorutil::convert_RGB_to_XYZ(rgb_color_2);
+colorutil::Lab lab_color_1 = colorutil::convert_XYZ_to_Lab(xyz_color_1);
+colorutil::Lab lab_color_2 = colorutil::convert_XYZ_to_Lab(xyz_color_2);
+```
+Finally, calculate the perceptual distance of the two colors:
+```
+double difference = colorutil::calculate_CIEDE2000(lab_color_1, lab_color_2);
+```
+In this case, it returns `53.8646` as the perceptual distance between the two colors.
+
 ## License
 
 MIT License.
