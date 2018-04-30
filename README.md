@@ -22,3 +22,11 @@ The correctness of the implementation is verified through the test dataset provi
 ## Dependency
 
 - Eigen <http://eigen.tuxfamily.org/>
+
+## License
+
+MIT License.
+
+## Contribute
+
+Pull requests are welcome.
