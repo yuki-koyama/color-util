@@ -5,11 +5,8 @@
 
 namespace colorutil
 {
-    /// RGB
+    /// sRGB
     using RGB = Eigen::Vector3d;
-    
-    /// Linearized (inverse companded) RGB
-    using rgb = Eigen::Vector3d;
     
     /// CIEXYZ
     using XYZ = Eigen::Vector3d;
