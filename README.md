@@ -9,7 +9,7 @@ A sRGB color can be converted to a CIEXYZ color using by `convert_RGB_to_XYZ`. T
 
 ### XYZ-to-Lab
 
-A CIEXYZ color can be converted to a CIELAB color using by `convert_XYZ_to_Lab`. This function is defined in `color-util/XYZ_to_Lab.hpp`.
+A CIEXYZ color can be converted to a CIELAB (a.k.a. CIE L\*a\*b\*) color using by `convert_XYZ_to_Lab`. This function is defined in `color-util/XYZ_to_Lab.hpp`.
 
 ## Color Difference Calculators
 
