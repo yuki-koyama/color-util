@@ -23,6 +23,17 @@ The correctness of the implementation is verified through the test dataset provi
 
 - Eigen <http://eigen.tuxfamily.org/>
 
+## Installation
+
+color-util is a *header-only* library, so it can be used by just copying the directory named `color-util` to the `include` directory of the target project. No need to build it in advance.
+
+For CMake <https://cmake.org/> users, this repository includes `CMakeLists.txt`; it can be installed by 
+```
+cmake [PATH_TO_THIS_REPOSITORY] -DCMAKE_INSTALL_PREFIX=[PATH_TO_INSTALL_DIRECTORY]
+make install
+```
+Alternatively, if the target project is also managed by CMake, the `ExternalProject_Add` command is also useful.
+
 ## License
 
 MIT License.
