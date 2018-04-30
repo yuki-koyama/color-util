@@ -29,13 +29,17 @@ namespace colorutil
             }
             else
             {
-                return t / (delta * delta) + 4.0 / 29.0;
+                return t / (3.0 * delta * delta) + 4.0 / 29.0;
             }
         };
         
-        const double L = 116.0 * f(xyz_color(1) / reference_xyz(1)) - 16.0;
-        const double a = 500.0 * (f(xyz_color(0) / reference_xyz(0)) - f(xyz_color(1) / reference_xyz(1)));
-        const double b = 200.0 * (f(xyz_color(1) / reference_xyz(1)) - f(xyz_color(2) / reference_xyz(2)));
+        const double x = xyz_color(0) / reference_xyz(0);
+        const double y = xyz_color(1) / reference_xyz(1);
+        const double z = xyz_color(2) / reference_xyz(2);
+
+        const double L = 116.0 * f(y) - 16.0;
+        const double a = 500.0 * (f(x) - f(y));
+        const double b = 200.0 * (f(y) - f(z));
         
         return Lab(L, a, b);
     }

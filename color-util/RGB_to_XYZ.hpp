@@ -30,7 +30,7 @@ namespace colorutil
                                    0.0193339, 0.1191920, 0.9503041
                                    ).finished();
         
-        return M * linearized_rgb_color;
+        return 100.0 * M * linearized_rgb_color;
     }
 }
 
