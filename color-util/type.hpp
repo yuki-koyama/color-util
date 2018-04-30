@@ -1,3 +1,7 @@
+///
+/// \file type.hpp
+///
+
 #ifndef type_hpp
 #define type_hpp
 

@@ -1,3 +1,7 @@
+///
+/// \file CIEDE2000.hpp
+///
+
 #ifndef CIEDE2000_hpp
 #define CIEDE2000_hpp
 
@@ -6,6 +10,16 @@
 
 namespace colorutil
 {
+    ///
+    /// \brief  Calculate the perceptual color difference based on CIEDE2000.
+    /// \param  color_1  The first color. This should be expressed in CIELAB color space.
+    /// \param  color_2  The second color. This should be expressed in CIELAB color space.
+    /// \return The color difference of the two colors.
+    ///
+    extern inline double calculate_CIEDE2000(const Lab& color_1, const Lab& color_2);
+
+    /////////////////////////////////////////////////////////////////////////////////
+
     namespace
     {
         constexpr double epsilon = 1e-10;
