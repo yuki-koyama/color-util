@@ -1,6 +1,4 @@
-///
 /// \file RGB_to_XYZ.hpp
-///
 
 #ifndef RGB_to_XYZ_h
 #define RGB_to_XYZ_h
@@ -10,10 +8,8 @@
 
 namespace colorutil
 {
-    ///
     /// \param rgb_color A color represented in sRGB
     /// \return A color represented in CIEXYZ
-    ///
     inline XYZ convert_RGB_to_XYZ(const RGB& rgb_color)
     {
         // Inverse companding for sRGB
