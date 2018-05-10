@@ -3,6 +3,10 @@ A header-only C++11 library for handling colors, including color space converter
 
 ## Color Space Convertors
 
+### RGB-to-HSL
+
+An RGB color can be converted to an HSL color using by `convert_RGB_to_HSL`. This function is defined in `color-util/RGB_to_HSL.hpp`.
+
 ### RGB-to-XYZ
 
 A sRGB color can be converted to a CIEXYZ color using by `convert_RGB_to_XYZ`. This function is defined in `color-util/RGB_to_XYZ.hpp`.
