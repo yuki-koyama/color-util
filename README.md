@@ -21,6 +21,12 @@ A CIEXYZ color can be converted to a CIELAB (a.k.a. CIE L\*a\*b\*) color using b
 
 ## Color Difference Calculators
 
+### CIE76
+
+Given two CIELAB colors, `calculate_CIE76` calculates a *perceptual* difference between these two colors based on a metric called CIE76. This function is defined in `color-util/CIE76.hpp`. 
+
+It is known that this metric is not perceptually uniform especially with saturated colors. In general, CIEDE2000 is considered as a better choice.
+
 ### CIEDE2000
 
 Given two CIELAB colors, `calculate_CIEDE2000` calculates a *perceptual* difference between these two colors based on a metric called CIEDE2000. This function is defined in `color-util/CIEDE2000.hpp`. 
