@@ -4,15 +4,19 @@ project(color-util CXX)
 set(CMAKE_CXX_STANDARD 11)
 
 find_package(Eigen3 REQUIRED)
-include_directories(${EIGEN3_INCLUDE_DIR})
 
-file(GLOB headers color-util/*.hpp)
-install(FILES ${headers} DESTINATION include/color-util)
+file(GLOB HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/include/color-util/*.hpp)
+
+add_library(color-util INTERFACE)
+target_sources(color-util INTERFACE ${HEADERS})
+target_include_directories(color-util INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_link_libraries(color-util INTERFACE Eigen3::Eigen)
+
+install(FILES ${HEADERS} DESTINATION include/color-util)
 
 option(COLORUTIL_BUILD_TESTS "Build tests" OFF)
 
 if(COLORUTIL_BUILD_TESTS)
-	include_directories(${CMAKE_SOURCE_DIR})
 	add_subdirectory(tests/conversions)
 	add_subdirectory(tests/CIEDE2000)
 
