@@ -17,7 +17,10 @@ int main()
     std::cout << "CIELAB : " << lab_color.transpose() << std::endl;
 
     // Test the correctness of the RGB => HSL => RGB conversion
-    assert((rgb_color - colorutil::convert_HSL_to_RGB(hsl_color)).norm() < 1e-5);
+    if ((rgb_color - colorutil::convert_HSL_to_RGB(hsl_color)).norm() > 1e-5)
+    {
+        throw std::runtime_error("Failed to pass the test.");
+    }
 
     return 0;
 }

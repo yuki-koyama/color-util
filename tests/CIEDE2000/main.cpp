@@ -60,6 +60,11 @@ int main()
         std::cout << "Color 2 (CIELAB) : " << color_2.transpose() << std::endl;
         std::cout << "CIEDE2000 (Calculated) : " << calculated_distance << std::endl;
         std::cout << "CIEDE2000 (Expected)   : " << expected_distance << std::endl;
+
+        if (!pass_test)
+        {
+            throw std::runtime_error("Failed to pass the test.");
+        }
     }
 
     return 0;
