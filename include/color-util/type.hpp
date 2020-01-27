@@ -15,9 +15,9 @@ namespace colorutil
 
     /// CIEXYZ
     using XYZ = Eigen::Vector3d;
-    
+
     /// CIELAB
     using Lab = Eigen::Vector3d;
-}
+} // namespace colorutil
 
 #endif /* type_hpp */

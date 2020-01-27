@@ -20,21 +20,35 @@ namespace colorutil
 
         const double L = 0.5 * (M + m);
         const double S = L > 0.99999 ? 0.0 : C / (1.0 - std::abs(2.0 * L - 1.0));
-        const double H = [&]()
-        {
+        const double H = [&]() {
             double H_prime;
 
-            if      (C < 0.00001)          { H_prime = 0.0;                                       }
-            else if (max_coeff_index == 0) { H_prime = ((rgb_color(1) - rgb_color(2)) / C);       }
-            else if (max_coeff_index == 1) { H_prime = ((rgb_color(2) - rgb_color(0)) / C) + 2.0; }
-            else if (max_coeff_index == 2) { H_prime = ((rgb_color(0) - rgb_color(1)) / C) + 4.0; }
-            else                           { assert(false);                                       }
+            if (C < 0.00001)
+            {
+                H_prime = 0.0;
+            }
+            else if (max_coeff_index == 0)
+            {
+                H_prime = ((rgb_color(1) - rgb_color(2)) / C);
+            }
+            else if (max_coeff_index == 1)
+            {
+                H_prime = ((rgb_color(2) - rgb_color(0)) / C) + 2.0;
+            }
+            else if (max_coeff_index == 2)
+            {
+                H_prime = ((rgb_color(0) - rgb_color(1)) / C) + 4.0;
+            }
+            else
+            {
+                assert(false);
+            }
 
             return H_prime > 0.0 ? H_prime / 6.0 : H_prime / 6.0 + 1.0;
         }();
-        
+
         return HSL(H, S, L);
     }
-}
+} // namespace colorutil
 
 #endif /* RGB_to_HSL_h */
