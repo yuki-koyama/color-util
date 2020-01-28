@@ -31,13 +31,15 @@ namespace colorutil
             }
         };
 
-        const double x = xyz_color(0) * inv_ref_xyz[0];
-        const double y = xyz_color(1) * inv_ref_xyz[1];
-        const double z = xyz_color(2) * inv_ref_xyz[2];
+        const Eigen::Vector3d normalized_xyz = xyz_color.cwiseProduct(Eigen::Map<const Eigen::Vector3d>(inv_ref_xyz));
 
-        const double L = 116.0 * f(y) - 16.0;
-        const double a = 500.0 * (f(x) - f(y));
-        const double b = 200.0 * (f(y) - f(z));
+        const double f_x = f(normalized_xyz(0));
+        const double f_y = f(normalized_xyz(1));
+        const double f_z = f(normalized_xyz(2));
+
+        const double L = 116.0 * f_y - 16.0;
+        const double a = 500.0 * (f_x - f_y);
+        const double b = 200.0 * (f_y - f_z);
 
         return Lab(L, a, b);
     }
