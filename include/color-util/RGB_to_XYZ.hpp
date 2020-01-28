@@ -8,19 +8,28 @@
 
 namespace colorutil
 {
-    /// \param rgb_color A color represented in sRGB
-    /// \return A color represented in CIEXYZ
-    inline XYZ convert_RGB_to_XYZ(const RGB& rgb_color)
+    /// \brief Perform the inverse gamma companding for a sRGB color
+    /// \details http://www.brucelindbloom.com/index.html?Eqn_RGB_XYZ_Matrix.html
+    inline RGB perform_inverse_sRGB_companding(const RGB& srgb_color)
     {
-        // Inverse companding for sRGB
-        Eigen::Vector3d linearized_rgb_color;
+        RGB linear_srgb_color;
         for (int i : {0, 1, 2})
         {
-            linearized_rgb_color(i) =
-                (rgb_color(i) <= 0.04045) ? rgb_color(i) / 12.92 : std::pow((rgb_color(i) + 0.055) / 1.055, 2.4);
+            linear_srgb_color(i) =
+                (srgb_color(i) <= 0.04045) ? srgb_color(i) / 12.92 : std::pow((srgb_color(i) + 0.055) / 1.055, 2.4);
         }
+        return linear_srgb_color;
+    }
+
+    /// \param rgb_color A color represented in sRGB (D65)
+    /// \return A color represented in CIEXYZ (D65)
+    inline XYZ convert_RGB_to_XYZ(const RGB& srgb_color)
+    {
+        // Inverse companding for sRGB
+        const RGB linear_srgb = perform_inverse_sRGB_companding(srgb_color);
 
         // Retrieved from http://www.brucelindbloom.com/index.html?Eqn_RGB_XYZ_Matrix.html
+        // sRGB (D65)
         const Eigen::MatrixXd M = (Eigen::Matrix3d() << 0.4124564,
                                    0.3575761,
                                    0.1804375,
@@ -32,7 +41,7 @@ namespace colorutil
                                    0.9503041)
                                       .finished();
 
-        return 100.0 * M * linearized_rgb_color;
+        return 100.0 * M * linear_srgb;
     }
 } // namespace colorutil
 

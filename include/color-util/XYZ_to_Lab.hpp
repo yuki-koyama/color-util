@@ -9,8 +9,8 @@
 namespace colorutil
 {
     /// \brief Convert a CIEXYZ color into a CIELAB color under Illuminant D65.
-    /// \param xyz_color A color represented in CIEXYZ
-    /// \return A color represented in CIELAB
+    /// \param xyz_color A color represented in CIEXYZ (D65)
+    /// \return A color represented in CIELAB (D65)
     inline Lab convert_XYZ_to_Lab(const XYZ& xyz_color)
     {
         // The reference white point under Illuminant D65

@@ -7,7 +7,7 @@
 
 namespace colorutil
 {
-    /// sRGB - each value is defined in [0, 1]
+    /// RGB - each value is defined in [0, 1]
     using RGB = Eigen::Vector3d;
 
     /// HSL - each value is defined in [0, 1]
