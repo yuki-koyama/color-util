@@ -30,16 +30,11 @@ namespace colorutil
 
         // Retrieved from http://www.brucelindbloom.com/index.html?Eqn_RGB_XYZ_Matrix.html
         // sRGB (D65)
-        const Eigen::MatrixXd M = (Eigen::Matrix3d() << 0.4124564,
-                                   0.3575761,
-                                   0.1804375,
-                                   0.2126729,
-                                   0.7151522,
-                                   0.0721750,
-                                   0.0193339,
-                                   0.1191920,
-                                   0.9503041)
-                                      .finished();
+        constexpr double M_data[3 * 3] = {
+            0.4124564, 0.3575761, 0.1804375, 0.2126729, 0.7151522, 0.0721750, 0.0193339, 0.1191920, 0.9503041};
+
+        // Note: The use of "auto" avoids unnecessary data copy by lazy evaluation
+        const auto M = Eigen::Map<const Eigen::Matrix<double, 3, 3, Eigen::RowMajor>>(M_data);
 
         return 100.0 * M * linear_srgb;
     }
