@@ -1,7 +1,7 @@
 /// \file CIE76.hpp
 
-#ifndef CIE76_hpp
-#define CIE76_hpp
+#ifndef COLORUTIL_CIE76_HPP
+#define COLORUTIL_CIE76_HPP
 
 #include <cmath>
 #include <color-util/type.hpp>
@@ -15,4 +15,4 @@ namespace colorutil
     inline double calculate_CIE76(const Lab& color_1, const Lab& color_2) { return (color_1 - color_2).norm(); }
 } // namespace colorutil
 
-#endif /* CIE76_hpp */
+#endif // COLORUTIL_CIE76_HPP

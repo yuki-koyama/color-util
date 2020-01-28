@@ -1,7 +1,7 @@
 /// \file type.hpp
 
-#ifndef type_hpp
-#define type_hpp
+#ifndef COLORUTIL_TYPE_HPP
+#define COLORUTIL_TYPE_HPP
 
 #include <Eigen/Core>
 
@@ -20,4 +20,4 @@ namespace colorutil
     using Lab = Eigen::Vector3d;
 } // namespace colorutil
 
-#endif /* type_hpp */
+#endif // COLORUTIL_TYPE_HPP

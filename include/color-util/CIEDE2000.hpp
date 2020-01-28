@@ -1,7 +1,7 @@
 /// \file CIEDE2000.hpp
 
-#ifndef CIEDE2000_hpp
-#define CIEDE2000_hpp
+#ifndef COLORUTIL_CIEDE2000_HPP
+#define COLORUTIL_CIEDE2000_HPP
 
 #include <cmath>
 #include <color-util/type.hpp>
@@ -148,4 +148,4 @@ namespace colorutil
     }
 } // namespace colorutil
 
-#endif /* CIEDE2000_hpp */
+#endif // COLORUTIL_CIEDE2000_HPP

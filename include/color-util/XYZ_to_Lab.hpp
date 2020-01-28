@@ -1,7 +1,7 @@
 /// \file XYZ_to_Lab.hpp
 
-#ifndef XYZ_to_Lab_h
-#define XYZ_to_Lab_h
+#ifndef COLORUTIL_XYZ_TO_LAB_HPP
+#define COLORUTIL_XYZ_TO_LAB_HPP
 
 #include <cmath>
 #include <color-util/type.hpp>
@@ -40,4 +40,4 @@ namespace colorutil
     }
 } // namespace colorutil
 
-#endif /* XYZ_to_Lab_h */
+#endif // COLORUTIL_XYZ_TO_LAB_HPP

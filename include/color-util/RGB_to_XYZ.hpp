@@ -1,7 +1,7 @@
 /// \file RGB_to_XYZ.hpp
 
-#ifndef RGB_to_XYZ_h
-#define RGB_to_XYZ_h
+#ifndef COLORUTIL_RGB_TO_XYZ_HPP
+#define COLORUTIL_RGB_TO_XYZ_HPP
 
 #include <cmath>
 #include <color-util/type.hpp>
@@ -36,4 +36,4 @@ namespace colorutil
     }
 } // namespace colorutil
 
-#endif /* RGB_to_XYZ_h */
+#endif // COLORUTIL_RGB_TO_XYZ_HPP

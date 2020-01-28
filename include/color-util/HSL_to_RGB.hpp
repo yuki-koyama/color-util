@@ -1,7 +1,7 @@
 /// \file HSL_to_RGB.hpp
 
-#ifndef HSL_to_RGB_h
-#define HSL_to_RGB_h
+#ifndef COLORUTIL_HSL_TO_RGB_HPP
+#define COLORUTIL_HSL_TO_RGB_HPP
 
 #include <cmath>
 #include <color-util/type.hpp>
@@ -76,4 +76,4 @@ namespace colorutil
     }
 } // namespace colorutil
 
-#endif /* HSL_to_RGB_h */
+#endif // COLORUTIL_HSL_TO_RGB_HPP
