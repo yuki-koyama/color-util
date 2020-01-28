@@ -1,4 +1,8 @@
 # color-util
+
+![macOS](https://github.com/yuki-koyama/color-util/workflows/macOS/badge.svg)
+![Ubuntu](https://github.com/yuki-koyama/color-util/workflows/Ubuntu/badge.svg)
+
 A header-only C++11 library for handling colors, including color space converters between RGB, XYZ, Lab, etc. and color difference calculators such as CIEDE2000.
 
 ## Color Space Convertors
