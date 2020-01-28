@@ -7,16 +7,20 @@
 
 namespace colorutil
 {
-    /// RGB - each value is defined in [0, 1]
+    /// \brief RGB
+    ///
+    /// \details Each value is defined in [0, 1].
     using RGB = Eigen::Vector3d;
 
-    /// HSL - each value is defined in [0, 1]
+    /// \brief HSL
+    ///
+    /// \details Each value is defined in [0, 1].
     using HSL = Eigen::Vector3d;
 
-    /// CIEXYZ
+    /// \brief CIEXYZ
     using XYZ = Eigen::Vector3d;
 
-    /// CIELAB
+    /// \brief CIELAB
     using Lab = Eigen::Vector3d;
 } // namespace colorutil
 
