@@ -10,18 +10,26 @@ namespace colorutil
     /// \brief RGB
     ///
     /// \details Each value is defined in [0, 1].
-    using RGB = Eigen::Vector3d;
+    class RGB : public Eigen::Vector3d {
+        using Eigen::Vector3d::Vector3d;
+    };
 
     /// \brief HSL
     ///
     /// \details Each value is defined in [0, 1].
-    using HSL = Eigen::Vector3d;
+    class HSL : public Eigen::Vector3d {
+        using Eigen::Vector3d::Vector3d;
+    };
 
     /// \brief CIEXYZ
-    using XYZ = Eigen::Vector3d;
+    class XYZ : public Eigen::Vector3d {
+        using Eigen::Vector3d::Vector3d;
+    };
 
     /// \brief CIELAB
-    using Lab = Eigen::Vector3d;
+    class Lab : public Eigen::Vector3d {
+        using Eigen::Vector3d::Vector3d;
+    };
 } // namespace colorutil
 
 #endif // COLORUTIL_TYPE_HPP
