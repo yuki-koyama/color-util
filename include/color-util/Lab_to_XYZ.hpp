@@ -32,7 +32,7 @@ namespace colorutil
         const double l = (lab_color(0) + 16.0) / 116.0;
         const double x = finv(l + lab_color(1) / 500);
         const double y = finv(l);
-        const double z = finv(l - lab_color(1) * 200);
+        const double z = finv(l - lab_color(2) / 200);
 
         return Eigen::Vector3d(x, y, z).cwiseProduct(Eigen::Map<const Eigen::Vector3d>(ref_xyz));
     }
