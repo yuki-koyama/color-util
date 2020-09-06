@@ -40,7 +40,7 @@ int main()
     }
 
     // Test the correctness of RGB => XYZ => RGB
-    if ((delta = (rgb_color - colorutil::convert_Lab_to_XYZ(xyz_color)).norm()) > 1e-5)
+    if ((delta = (rgb_color - colorutil::convert_XYZ_to_RGB(xyz_color)).norm()) > 1e-5)
     {
         throw std::runtime_error(FORMAT("Failed to pass the test (RGB-XYZ), delta = {}.", delta));
     }
