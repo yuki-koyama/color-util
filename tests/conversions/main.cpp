@@ -10,7 +10,7 @@
 #include <format>
 #define FORMAT(x, ...) std::format(x __VA_OPT__(,) __VA_ARGS__)
 #else
-#define FORMAT(x, ...) (x)
+#define FORMAT(x, y) (std::string(x) + " ({} = " + std::to_string(y) + ")")
 #endif
 
 int main()
