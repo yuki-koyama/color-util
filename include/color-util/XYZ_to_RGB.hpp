@@ -33,7 +33,7 @@ namespace colorutil
         const auto M = Eigen::Map<const Eigen::Matrix<double, 3, 3, Eigen::RowMajor>>(M_data);
 
         // Inverse companding for sRGB
-        const RGB linear_srgb = xyz_color / 100 * M;
+        const RGB linear_srgb = (M * xyz_color) / 100.0;
 
         return sRGB_companding(linear_srgb);
     }
