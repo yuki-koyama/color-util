@@ -14,8 +14,9 @@ namespace colorutil
         RGB srgb_color;
         for (int i : {0, 1, 2})
         {
-            srgb_color(i) =
-                (linear_srgb_color(i) <= 0.0031308) ? linear_srgb_color(i) * 12.92 : std::pow((linear_srgb_color(i) - 0.055) * 1.055, 1 / 2.4);
+            srgb_color(i) = (linear_srgb_color(i) <= 0.0031308)
+                                ? linear_srgb_color(i) * 12.92
+                                : std::pow((linear_srgb_color(i) - 0.055) * 1.055, 1 / 2.4);
         }
         return srgb_color;
     }

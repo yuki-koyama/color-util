@@ -1,14 +1,14 @@
 #include <color-util/HSL_to_RGB.hpp>
+#include <color-util/Lab_to_XYZ.hpp>
 #include <color-util/RGB_to_HSL.hpp>
 #include <color-util/RGB_to_XYZ.hpp>
-#include <color-util/XYZ_to_RGB.hpp>
 #include <color-util/XYZ_to_Lab.hpp>
-#include <color-util/Lab_to_XYZ.hpp>
+#include <color-util/XYZ_to_RGB.hpp>
 #include <iostream>
 
 #if __cplusplus > 202000L
 #include <format>
-#define FORMAT(x, ...) std::format(x __VA_OPT__(,) __VA_ARGS__)
+#define FORMAT(x, ...) std::format(x __VA_OPT__(, ) __VA_ARGS__)
 #else
 #define FORMAT(x, y) (std::string(x) + " ({} = " + std::to_string(y) + ")")
 #endif
