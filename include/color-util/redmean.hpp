@@ -15,7 +15,8 @@ namespace colorutil
     inline double calculate_redmean(const RGB& color_1, const RGB& color_1)
     {
         double redmean = (color_1(0) + color_2(0)) * 0.5;
-        double diff    = color_1 - color_2;
+        Eigen::Vector3d diff    = color_1 - color_2;
+        diff = diff.cwiseProduct(Eigen::Map<const Eigen::Vector3d>(diff));
         return sqrt((2 + redmean) * diff(0) + 4 * diff(1) + (2 - redmean) * diff(2));
     }
 } // namespace colorutil
