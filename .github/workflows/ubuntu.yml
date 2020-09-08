@@ -1,6 +1,6 @@
 name: Ubuntu
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build-test:
@@ -22,4 +22,4 @@ jobs:
     - name: make
       run: make
     - name: ctest
-      run: ctest
+      run: ctest --output-on-failure
