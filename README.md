@@ -29,7 +29,7 @@ It is known that this metric is not perceptually uniform especially with saturat
 
 Given two CIELAB colors, `calculate_CIEDE2000` calculates a *perceptual* difference between these two colors based on a metric called CIEDE2000. This function is defined in `color-util/CIEDE2000.hpp`.
 
-The correctness of the implementation is verified through the test dataset provided by Gaurav Sharma <http://www2.ece.rochester.edu/~gsharma/ciede2000/>.
+The correctness of the implementation is verified through the test dataset provided by Gaurav Sharma <https://hajim.rochester.edu/ece/sites/gsharma/ciede2000/>.
 
 ## Dependency
 
