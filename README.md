@@ -19,6 +19,12 @@ A header-only C++11 library for handling colors, including color space converter
 
 ## Color Difference Calculators
 
+### Redmean
+
+Given two sRGB colors, `calculate_redmean` calculates a difference between these two colors based on an [informal metric](https://www.compuphase.com/cmetric.htm). The function is defined in `color-util/redmean.hpp`.
+
+This simple metric is more perceptually uniform than an Euclidean distance in sRGB space, but is otherwise a bad choice.
+
 ### CIE76
 
 Given two CIELAB colors, `calculate_CIE76` calculates a *perceptual* difference between these two colors based on a metric called CIE76. This function is defined in `color-util/CIE76.hpp`.
